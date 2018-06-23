@@ -1,7 +1,7 @@
 #ifndef SENSOR_H
 #define SENSOR_H
 #include <iostream>
-#include <String>
+#include <string>
 #include "Alarme.h"
 
 using namespace std;
@@ -18,16 +18,12 @@ class Sensor
 public:
 	Sensor();
 	~Sensor();
-	getValor();
+	float getValor();
 	void readValor();
 	void setValorAtual(float v);
 	void setLimiteInferior(float li);
 	void setLimiteSuperior(float ls);
-	void setModelo(string m);
-	
-	
-	
-	
+	void setModelo(string m);	
 	
 };
 

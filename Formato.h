@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include "Data.h"
 using namespace std;
 
 class Formato
@@ -14,8 +14,8 @@ class Formato
 public:
 	Formato();
 	~Formato();
-	//void printData(Data d);           // Imprime a data na tela conforme o formato
-	//string getDataFormatada(Data d);  // Retorna a data formatada como string
+	// void printData(Data d);           // Imprime a data na tela conforme o formato
+	// string getDataFormatada(Data d);  // Retorna a data formatada como string
 	string getNome();
 };
 

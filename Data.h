@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Formato.h"
 // OBS TODOS CONSTRUTORES CHAMAM validaData();
 //e uma exceão
 using namespace std;
@@ -16,13 +17,13 @@ class Data
 	int minuto;
 	int segundo;
 	int diaSemana; // de 0 a 6 que representa os dias da semana
-	long ticks;		   // Número de segundos desde 01/01/1970
-    //Formato estilo;; // pt-br  ou  en-us
-	void ticksToDate();
-	void dateToticks();
+	long int ticks;		   // Número de segundos desde 01/01/1970
+    //Formato formato; // pt-br  ou  en-us
+	Data ticksToDate();
+	long int dateToTicks();
 	
 public:
-int getDia();
+	int getDia();
 	int getMes();
 	int getAno();
 	int getHora();
@@ -34,13 +35,14 @@ int getDia();
 	Data now();
 	void printData(); //imprime a data na tela conforme o formato. Verificar o formato 
 	string getData(); // Retorna a data formatada como string
-	//bool operator==(Data &d2); // verificar se o formatos sao iguais
-	//bool operator<(Data &d2); // compara datas
-	//bool operator>(Data &d2); // compara datas
-	//bool operator-(Data &d2);//Para subtrair dias
-	//bool operator+(Data &d2); // Para somar dias
-	Data(int,int,int,int,int,int);
+	bool operator>(Data &other);
+    bool operator<(Data &other);
+    bool operator==(Data &other);
+	Data operator-(Data &other);//Para subtrair dias
+	void operator=(Data &other);
+	Data operator+(Data &other); // Para somar dias
 	Data();
+	Data(string s);
 	~Data();
 
 };
